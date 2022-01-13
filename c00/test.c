@@ -6,7 +6,7 @@
 /*   By: swaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:28:34 by swaegene          #+#    #+#             */
-/*   Updated: 2022/01/13 17:09:25 by swaegene         ###   ########.fr       */
+/*   Updated: 2022/01/13 17:31:21 by swaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int main(void)
 	print_expect("-2147483648");
 	printf("\n");
 
-	/* ex08 ft_print_combn */
+	/* TODO: ex08 ft_print_combn */
 	ft_print_combn(0);
 	ft_print_combn(4);
 	ft_print_combn(10);
