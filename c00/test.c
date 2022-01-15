@@ -6,7 +6,7 @@
 /*   By: swaegene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:28:34 by swaegene          #+#    #+#             */
-/*   Updated: 2022/01/13 17:31:21 by swaegene         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:38:46 by swaegene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,8 +121,21 @@ int main(void)
 	print_expect("-2147483648");
 	printf("\n");
 
-	/* TODO: ex08 ft_print_combn */
-	ft_print_combn(0);
-	ft_print_combn(4);
-	ft_print_combn(10);
+	/*  ex08 ft_print_combn */
+	print_header("ex08 ft_print_combn");
+	printf("result: \n");
+	ft_print_combn(1);
+	printf("\n");
+	print_expect("0, 1, 2, 3, 4, 5, 6, 7, 8, 9");
+	printf("\n");
+	printf("result: \n");
+	ft_print_combn(2);
+	printf("\n");
+	print_expect("01, 02, 03, ..., 09, 12, ..., 79, 89");
+	printf("\n");
+	printf("result: \n");
+	ft_print_combn(9);
+	printf("\n");
+	print_expect("012345678, 012345679, 012345689, 012345789, 012346789, 012356789, 012456789, 013456789, 023456789, 123456789");
+	printf("\n");
 }
