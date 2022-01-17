@@ -7,15 +7,15 @@ int	main(void)
 	char	test3[] = "1 3";
 
 	ft_strlowcase(test1);
-	if (test1[0] != 'a' && test1[2] != 'b' && test1[3] != 'c')
+	if (test1[0] != 'a' || test1[1] != 'b' || test1[2] != 'c')
 		return (1);
 
 	ft_strlowcase(test2);
-	if (test2[0] != 'a' && test2[2] != '1' && test2[4] != 'c')
+	if (test2[0] != 'a' || test2[2] != '1' || test2[4] != 'c')
 		return (1);
 
 	ft_strlowcase(test3);
-	if (test3[0] != '1' && test3[1] != ' ' && test3[2] != '3')
+	if (test3[0] != '1' || test3[1] != ' ' || test3[2] != '3')
 		return (1);
 
 	return (0);

@@ -194,3 +194,22 @@ else
 	echo "error: gcc compile failed"
 fi
 echo ""
+
+EX_NAME="ft_strlcpy"
+EX_NUM="ex10"
+EX_PATH="$EX_DIR/$EX_NUM/$EX_NAME.c"
+echo "-- $EX_NUM: $EX_NAME --"
+norminette -R CheckForbiddenSourceHeader $EX_PATH
+gcc -Wall -Werror -Wextra $EX_PATH $TEST_DIR/$EX_NUM.c -o $EX_NUM
+if [ $? -eq 0 ]; then
+	./$EX_NUM
+	if [ $? -eq 0 ]; then
+		echo "success"
+	else
+		echo "error: test failed"
+	fi
+	rm $EX_NUM
+else
+	echo "error: gcc compile failed"
+fi
+echo ""
