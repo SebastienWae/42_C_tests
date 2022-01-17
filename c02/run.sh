@@ -213,3 +213,26 @@ else
 	echo "error: gcc compile failed"
 fi
 echo ""
+
+EX_NAME="ft_putstr_non_printable"
+EX_NUM="ex11"
+EX_PATH="$EX_DIR/$EX_NUM/$EX_NAME.c"
+echo "-- $EX_NUM: $EX_NAME --"
+norminette -R CheckForbiddenSourceHeader $EX_PATH
+gcc -Wall -Werror -Wextra $EX_PATH $TEST_DIR/$EX_NUM.c -o $EX_NUM
+if [ $? -eq 0 ]; then
+	./$EX_NUM | cat -e > result_diff
+	echo -n "Coucou\0atu vas bien ?Coucou\0atu\09vas bien ?" | cat -e > test_diff
+	diff result_diff test_diff
+	if [ $? -eq 0 ]; then
+		echo "success"
+	else
+		echo "error: test failed"
+	fi
+	rm test_diff
+	rm result_diff
+	rm $EX_NUM
+else
+	echo "error: gcc compile failed"
+fi
+echo ""
