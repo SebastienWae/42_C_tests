@@ -9,6 +9,7 @@ def norminette(path):
     print("[underline]norminette:")
     output = subprocess.run(["norminette", "-R", "CheckForbiddenSourceHeader", path], capture_output=True)
     print(output)
+    console.print(output.stdout.decode('UTF-8'))
 
 def gcc_compile(c_file_path, test_file_path):
     print("[underline]gcc:")
@@ -16,8 +17,10 @@ def gcc_compile(c_file_path, test_file_path):
     print(output)
     if(output.stderr):
         console.print(output.stderr.decode('UTF-8'))
+        print("")
         return False
     else:
+        print("")
         return True
 
 def diff_output(output, test_output):
@@ -55,7 +58,7 @@ def test_exercise(exercise, project_path, test_path):
                 else:
                     print(f"[bold underline green]>> success <<")
     else:
-        print("error: missing or extra files found! clean your shit!")
+        print("[underline bold red]>> error: missing or extra files found! clean your shit! <<")
 
 def run_test(project_path, project, exercise, watch):
     test_path = f"{os.path.dirname(os.path.realpath(__file__))}/{project}"
