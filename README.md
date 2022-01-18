@@ -1,12 +1,13 @@
 ## how to use
 ### install
-`git clone https://github.com/sebastienwa/42_C_test`
+`git clone https://github.com/SebastienWae/42_C_tests`
 
 `./install.sh`
 
 ### run test
-`./run.sh test -p cXX ~/piscine/cXX`
+`./run.sh -p cXX ~/piscine/cXX`
 
-`./run.sh test -p cXX -e exXX ~/piscine/cXX`
+`./run.sh -p cXX -e exXX ~/piscine/cXX`
 
-`./run.sh test -w -p cXX -e exXX ~/piscine/cXX`
+`./run.sh -w -p cXX -e exXX ~/piscine/cXX`
+
