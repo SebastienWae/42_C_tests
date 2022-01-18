@@ -18,7 +18,6 @@ int	main(void)
 		return (1);
 
 	ft_strcapitalize(test3);
-	printf("%s\n", test3);
 	if(strcmp(test3, "Salut, Comment Tu Vas ? 42mots Quarante-Deux; Ci..Nquante+Et+Un"))
 		return (1);
 
