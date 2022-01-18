@@ -7,7 +7,8 @@
 ### run test
 `./run.sh -p cXX ~/piscine/cXX`
 
+`./run.sh -p cXX -f ~/piscine/cXX`
+
 `./run.sh -p cXX -e exXX ~/piscine/cXX`
 
 `./run.sh -w -p cXX -e exXX ~/piscine/cXX`
-
