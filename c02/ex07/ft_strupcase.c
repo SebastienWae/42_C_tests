@@ -1,3 +1,5 @@
+#include <string.h>
+
 char *ft_strupcase(char *str);
 
 int	main(void)
@@ -7,15 +9,15 @@ int	main(void)
 	char	test3[] = "1 3";
 
 	ft_strupcase(test1);
-	if (test1[0] != 'A' || test1[1] != 'B' || test1[2] != 'C')
+	if (strcmp(test1, "ABC"))
 		return (1);
 
 	ft_strupcase(test2);
-	if (test2[0] != 'A' || test2[2] != '1' || test2[4] != 'C')
+	if (strcmp(test2, "AB12CD"))
 		return (1);
 
 	ft_strupcase(test3);
-	if (test3[0] != '1' || test3[1] != ' ' || test3[2] != '3')
+	if (strcmp(test3, "1 3"))
 		return (1);
 
 	return (0);

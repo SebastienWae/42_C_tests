@@ -6,15 +6,12 @@ int	main(void)
 {
 	char	*r;
 	char	*r_test;
-	char	dest;
-	char	dest_test;
+	char	dest[3];
+	char	dest_test[3];
 
-	dest = 'a';
-	dest_test = 'a';
-	r = ft_strcpy(&dest, "b");
-	r_test = strcpy(&dest_test, "b");
-	if (dest ==  'b' && dest == dest_test && *r == *r_test)
-		return(0);
-	else
-		return(1);
+	r = ft_strcpy(dest, "42");
+	r_test = strcpy(dest_test, "42");
+	if (strcmp(r, r_test) != 0)
+		return (1);
+	return (0);
 }

@@ -1,28 +1,38 @@
 #include <string.h>
-#include <stdio.h>
 
 char *ft_strncpy(char *dest, char *src, unsigned int n);
 
 int	main(void)
 {
-	char	dest[6];
-	char	*result;
+	char	*r1;
+	char	*r1_test;
+	char	dest1[3];
+	char	dest1_test[3];
 
-	result = ft_strncpy(dest, "42", 2);
-	if (dest[0] != '4' || dest[1] != '2' || result != dest)
-		return 1;
+	char	*r2;
+	char	*r2_test;
+	char	dest2[10];
+	char	dest2_test[10];
 
-	result = ft_strncpy(dest, "hello", 2);
-	if (dest[0] != 'h' || dest[1] != 'e' || result != dest)
-		return 1;
+	char	*r3;
+	char	*r3_test;
+	char	dest3[100];
+	char	dest3_test[100];
 
-	result = ft_strncpy(dest, "hi", 6);
-	if (dest[0] != 'h' || dest[1] != 'i' || dest[3] != '\0' || dest[5] != '\0' || result != dest)
-		return 1;
+	r1 = ft_strncpy(dest1, "42", 1);
+	r1_test = strncpy(dest1_test, "42", 1);
+	if (strcmp(r1, r1_test) != 0)
+		return (1);
 
-	result = ft_strncpy(dest, "hello world", 6);
-	if (dest[0] != 'h' || dest[1] != 'e' || dest[3] != 'l' || dest[4] != 'o' || result != dest)
-		return 1;
+	r2 = ft_strncpy(dest2, "42", 10);
+	r2_test = strncpy(dest2_test, "42", 10);
+	if (strcmp(r2, r2_test) != 0)
+		return (1);
 
-	return 0;
+	r3 = ft_strncpy(dest3, "42", 10);
+	r3_test = strncpy(dest3_test, "42", 10);
+	if (strcmp(r3, r3_test) != 0)
+		return (1);
+
+	return (0);
 }

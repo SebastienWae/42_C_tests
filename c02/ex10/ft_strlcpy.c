@@ -5,17 +5,35 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
 
 int	main(void)
 {
-	char	dest1[7];
-	char	dest1_test[7];
-	char	dest2[2];
-	char	dest2_test[2];
+	unsigned int	r1;
+	unsigned int	r1_test;
+	char	dest1[3];
+	char	dest1_test[3];
 
-	ft_strlcpy(dest1, "hello", 6); 
-	if (ft_strlcpy(dest1, "hello", 6) != strlcpy(dest1_test, "hello", 6) || dest1[0] != 'h' || dest1[5] != '\0')
+	unsigned int	r2;
+	unsigned int	r2_test;
+	char	dest2[5];
+	char	dest2_test[5];
+
+	unsigned int	r3;
+	unsigned int	r3_test;
+	char	dest3[3];
+	char	dest3_test[3];
+
+	r1 = ft_strlcpy(dest1, "42", 1);
+	r1_test = strlcpy(dest1_test, "42", 1);
+	if (r1 != r1_test || strcmp(dest1, dest1_test) != 0)
 		return (1);
 
-	ft_strlcpy(dest2, "hello", 2); 
-	if (ft_strlcpy(dest2, "hello", 2) != strlcpy(dest2_test, "hello", 2) || dest2[0] != 'h' || dest2[1] != '\0')
+
+	r2 = ft_strlcpy(dest2, "42", 2);
+	r2_test = strlcpy(dest2_test, "42", 2);
+	if (r2 != r2_test || strcmp(dest2, dest2_test) != 0)
+		return (1);
+
+	r3 = ft_strlcpy(dest3, "42", 2);
+	r3_test = strlcpy(dest3_test, "42", 2);
+	if (r3 != r3_test || strcmp(dest3, dest3_test) != 0)
 		return (1);
 
 	return (0);

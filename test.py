@@ -23,7 +23,7 @@ def gcc_compile(c_file_path, test_file_path):
 def diff_output(output, test_output):
     with open("cmd_output", "w") as text_file:
         text_file.write(output)
-    output = subprocess.run(["diff", test_output, "./cmd_output"], capture_output=True)
+    output = subprocess.run(["diff", "-a", test_output, "./cmd_output"], capture_output=True)
     print(output)
     if(output.returncode != 0):
         console.print(output.stdout.decode('UTF-8'))
@@ -42,18 +42,18 @@ def test_exercise(exercise, project_path, test_path):
         if(gcc_compile(c_file, test_file)):
             output = subprocess.run(["./a.out"], capture_output=True)
             print("[underline]test result:")
+            print(output)
             if(output.returncode != 0):
-                print("[red]error: test failed")
+                print("[bold underline orange]>> error: test failed <<")
                 console.print(output.stderr.decode('UTF-8'))
             else:
                 if(os.path.isfile(f"{test_path}/{exercise}/output")):
                     if(diff_output(output.stdout.decode('UTF-8'), f"{test_path}/{exercise}/output")):
-                        print(f"[green]success")
+                        print(f"[bold underline green]>> success <<")
                     else:
-                        print("[red]error: test failed")
+                        print("[bold underline orange]>> error: test failed")
                 else:
-                    print(output)
-                    print(f"[green]success")
+                    print(f"[bold underline green]>> success <<")
     else:
         print("error: missing or extra files found! clean your shit!")
 
