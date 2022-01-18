@@ -44,14 +44,14 @@ def test_exercise(exercise, project_path, test_path):
             print("[underline]test result:")
             print(output)
             if(output.returncode != 0):
-                print("[bold underline orange]>> error: test failed <<")
+                print("[bold underline red]>> error: test failed <<")
                 console.print(output.stderr.decode('UTF-8'))
             else:
                 if(os.path.isfile(f"{test_path}/{exercise}/output")):
                     if(diff_output(output.stdout.decode('UTF-8'), f"{test_path}/{exercise}/output")):
                         print(f"[bold underline green]>> success <<")
                     else:
-                        print("[bold underline orange]>> error: test failed")
+                        print("[bold underline red]>> error: test failed")
                 else:
                     print(f"[bold underline green]>> success <<")
     else:
