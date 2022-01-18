@@ -11,7 +11,7 @@ int	main(void)
 	char	dest2_test[2];
 
 	ft_strlcpy(dest1, "hello", 6); 
-	if (ft_strlcpy(dest1, "hello", 6) != strlcpy(dest1_test, "hello", 6) || dest1[0] != 'h' || dest1[6] != '\0')
+	if (ft_strlcpy(dest1, "hello", 6) != strlcpy(dest1_test, "hello", 6) || dest1[0] != 'h' || dest1[5] != '\0')
 		return (1);
 
 	ft_strlcpy(dest2, "hello", 2); 
