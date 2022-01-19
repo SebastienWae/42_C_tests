@@ -4,11 +4,13 @@
 
 `./install.sh`
 
+### help
+`./run.sh --help`
+
 ### run test
-`./run.sh -p cXX ~/piscine/cXX`
+`./run.sh --project cXX ~/piscine/cXX`
 
-`./run.sh -p cXX -f ~/piscine/cXX`
+`./run.sh --project cXX --force ~/piscine/cXX`
 
-`./run.sh -p cXX -e exXX ~/piscine/cXX`
+`./run.sh --project cXX --exercise exXX ~/piscine/cXX`
 
-`./run.sh -w -p cXX -e exXX ~/piscine/cXX`
