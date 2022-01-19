@@ -50,6 +50,7 @@ def test_exercise(exercise, project_path, test_path, force):
                 output = subprocess.run(["./a.out"], capture_output=True)
                 print("[underline]test result:")
                 print(output)
+                console.print(output.stdout.decode('UTF-8'))
                 if(output.returncode != 0):
                     print("[bold underline red]>> error: test failed <<")
                     console.print(output.stderr.decode('UTF-8'))
