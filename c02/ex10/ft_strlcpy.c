@@ -16,9 +16,7 @@ int	main(void)
 	char	dest2_test[5];
 
 	unsigned int	r3;
-	unsigned int	r3_test;
 	char	dest3[3];
-	char	dest3_test[3];
 
 	r1 = ft_strlcpy(dest1, "42", 1);
 	r1_test = strlcpy(dest1_test, "42", 1);
@@ -31,10 +29,8 @@ int	main(void)
 	if (r2 != r2_test || strcmp(dest2, dest2_test) != 0)
 		return (1);
 
-	r3 = ft_strlcpy(dest3, "42", 2);
-	r3_test = strlcpy(dest3_test, "42", 2);
-	if (r3 != r3_test || strcmp(dest3, dest3_test) != 0)
-		return (1);
+	r3 = ft_strlcpy(dest3, "4234", 5000000);
+	printf("%s\n", dest3);
 
 	return (0);
 }
