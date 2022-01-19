@@ -52,11 +52,13 @@ def test_exercise(exercise, project_path, test_path, force):
                 print(output)
                 console.print(output.stdout.decode('UTF-8'))
                 if(output.returncode != 0):
-                    print("[bold underline red]>> error: test failed <<")
                     console.print(output.stderr.decode('UTF-8'))
+                    print("[bold underline red]>> error: test failed <<")
                     return False
                 else:
-                    if(os.path.isfile(f"{test_path}/{exercise}/output")):
+                    if(os.path.isfile(f"{test_path}/{exercise}/notest")):
+                        print("this exercise is not tested")
+                    elif(os.path.isfile(f"{test_path}/{exercise}/output")):
                         if(diff_output(output.stdout.decode('UTF-8'), f"{test_path}/{exercise}/output")):
                             print(f"[bold underline green]>> success <<")
                         else:
