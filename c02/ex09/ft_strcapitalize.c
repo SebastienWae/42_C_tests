@@ -3,68 +3,100 @@
 
 char *ft_strcapitalize(char *str);
 
+/*
+ * ft_strcapitalize
+ * change first letter of each word to uppercase
+ * change letter that are not first of the word to lowercase
+ * word start at frist alphanum char after a non-alphanum char
+ * return `str`
+ */
+
 int	main(void)
 {
-	char	test1[] = "SFP-ChB Py&^&IQW?@UY6(GM`A8=";
-	char	test2[] = "L#YG:QJn5(FPrH6Gj-TXbkPF6Ei?>@O1";
-	char	test3[] = "?#Xkv#Ad]&8[1[";
-	char	test4[] = "C88o*FOc3(}RX!%FfvF4sU(Fs`KsSk4c(YqI";
-	char	test5[] = "/ 'Uvd##M&";
-	char	test6[] = "27qtv#LI9X+VWtjRbDX[(.0`F9mrBq,";
-	char	test7[] = "NJ~DkkCe*B,GP6|EoLi@5";
-	char	test8[] = "$T@^/3{DF";
-	char	test9[] = "KeYW@_Gw(Kv@7TI C|Af";
-	char	test10[] = "NULL";
-	char	test11[] = "";
-	char	test12[] = "ReKt17+LOl MdR Mdr 4242l42";
+	char	str1[] = "hello";
+	char	str2[] = "hELlo";
+	char	str3[] = "42helLO";
+	char	str4[] = "hELlo;woRLd";
+	char	str5[] = "\t$t@^/3{DF";
+	char	str6[] = "ReKt17+LOl MdR Mdr 4242l42";
+	char	str7[] = "";
 
-	ft_strcapitalize(test1);
-	if(strcmp(test1, "Sfp-Chb Py&^&Iqw?@Uy6(Gm`A8="))
+	printf("capitalize 1 word and return test:\n");
+	if (strcmp(ft_strcapitalize(str1), "Hello") != 0)
+	{
+		printf("failed: does not capitalize a single word or return str\n");
+		printf("expected: Hello\n");
+		printf("result: %s\n", str1);
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	ft_strcapitalize(test2);
-	if(strcmp(test2, "L#Yg:Qjn5(Fprh6gj-Txbkpf6ei?>@O1"))
+	printf("lowercase all letters that are not the first of a word test:\n");
+	if (strcmp(ft_strcapitalize(str2), "Hello") != 0)
+	{
+		printf("failed: does not lowercase letters that not first of a word\n");
+		printf("expected: Hello\n");
+		printf("result: %s\n", str2);
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	ft_strcapitalize(test3);
-	if(strcmp(test3, "?#Xkv#Ad]&8[1["))
+	printf("word start with numeric char test:\n");
+	if (strcmp(ft_strcapitalize(str3), "42hello") != 0)
+	{
+		printf("failed: does not handle words that start with a number\n");
+		printf("expected: 42hello\n");
+		printf("result: %s\n", str3);
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	ft_strcapitalize(test4);
-	if(strcmp(test4, "C88o*Foc3(}Rx!%Ffvf4su(Fs`Kssk4c(Yqi"))
+	printf("word are separated with non alphanumeric char test:\n");
+	if (strcmp(ft_strcapitalize(str4), "Hello;World") != 0)
+	{
+		printf("failed: does not handle words that are separated with a non alphanumeric char \n");
+		printf("expected: Hello;World\n");
+		printf("result: %s\n", str4);
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	ft_strcapitalize(test5);
-	if(strcmp(test5, "/ 'Uvd##M&"))
+	printf("special case test:\n");
+	if (strcmp(ft_strcapitalize(str5), "\t$T@^/3{Df") != 0)
+	{
+		printf("failed:\n");
+		printf("expected: \t$T@^/3{Df\n");
+		printf("result: %s\n", str5);
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	ft_strcapitalize(test6);
-	if(strcmp(test6, "27qtv#Li9x+Vwtjrbdx[(.0`F9mrbq,"))
+	printf("special case test:\n");
+	if (strcmp(ft_strcapitalize(str6), "Rekt17+Lol Mdr Mdr 4242l42") != 0)
+	{
+		printf("failed:\n");
+		printf("expected: \t$T@^/3{Df\n");
+		printf("result: %s\n", str6);
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	ft_strcapitalize(test7);
-	if(strcmp(test7, "Nj~Dkkce*B,Gp6|Eoli@5"))
+	printf("special case test:\n");
+	if (strcmp(ft_strcapitalize(str7), "") != 0)
+	{
+		printf("failed:\n");
+		printf("expected: \n");
+		printf("result: %s\n", str7);
 		return (1);
-
-	ft_strcapitalize(test8);
-	if(strcmp(test8, "$T@^/3{Df"))
-		return (1);
-
-	ft_strcapitalize(test9);
-	if(strcmp(test9, "Keyw@_Gw(Kv@7ti C|Af"))
-		return (1);
-
-	ft_strcapitalize(test10);
-	if(strcmp(test10, "Null"))
-		return (1);
-
-	ft_strcapitalize(test11);
-	if(strcmp(test11, ""))
-		return (1);
-
-	ft_strcapitalize(test12);
-	if(strcmp(test12, "Rekt17+Lol Mdr Mdr 4242l42"))
-		return (1);
+	}
+	else
+		printf("ok\n");
 
 	return (0);
 }
