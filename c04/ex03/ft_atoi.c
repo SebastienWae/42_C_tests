@@ -38,6 +38,10 @@ int	main(void)
 	if (r != 12)
 		return (1);
 
+	r = ft_atoi("  12++3 3");
+	if (r != 123)
+		return (1);
+
 	r = ft_atoi("---+--+1234ab567");
 	if (r != -1234)
 		return (1);
