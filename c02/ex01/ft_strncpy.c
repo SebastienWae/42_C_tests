@@ -1,38 +1,70 @@
+#include <stdio.h>
 #include <string.h>
 
 char *ft_strncpy(char *dest, char *src, unsigned int n);
 
+/*
+ * strncpy
+ * copy at most `n` char from `src` to `dest`
+ * if `src` smaller than `n` the remainder is filled with \0
+ * does not terminate with \0
+ * return `dest`
+ */
+
 int	main(void)
 {
-	char	*r1;
-	char	*r1_test;
-	char	dest1[3];
-	char	dest1_test[3];
+	char	dest[20];
 
-	char	*r2;
-	char	*r2_test;
-	char	dest2[10];
-	char	dest2_test[10];
-
-	char	*r3;
-	char	*r3_test;
-	char	dest3[100];
-	char	dest3_test[100];
-
-	r1 = ft_strncpy(dest1, "42", 1);
-	r1_test = strncpy(dest1_test, "42", 1);
-	if (strcmp(r1, r1_test) != 0)
+	printf("copy test:\n");
+	ft_strncpy(dest, "hello", 6);
+	if (strcmp(dest, "hello") != 0)
+	{
+		printf("failed: src was not copied to dest\n");
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	r2 = ft_strncpy(dest2, "42", 10);
-	r2_test = strncpy(dest2_test, "42", 10);
-	if (strcmp(r2, r2_test) != 0)
+	printf("copy up to n test:\n");
+	ft_strncpy(dest, "hello", 2);
+	dest[2] = '\0';
+	if (strcmp(dest, "he") != 0)
+	{
+		printf("failed: src was not copied up to n to dest\n");
 		return (1);
+	}
+	else
+		printf("ok\n");
 
-	r3 = ft_strncpy(dest3, "42", 10);
-	r3_test = strncpy(dest3_test, "42", 10);
-	if (strcmp(r3, r3_test) != 0)
+	printf("add NUL char test:\n");
+	ft_strncpy(dest, "hello", 10);
+	if (strcmp(dest, "hello\0\0\0\0\0") != 0)
+	{
+		printf("failed: NUL char are not added if src is smaller than n\n");
 		return (1);
+	}
+	else
+		printf("ok\n");
+
+	printf("does not terminate with NUL test:\n");
+	ft_strncpy(dest, "hello", 2);
+	if (dest[2] == '\0')
+	{
+		printf("failed: extra NUL char was added\n");
+		return (1);
+	}
+	else
+		printf("ok\n");
+
+	printf("return value test:\n");
+	ft_strncpy(dest, "42", 3);
+	if (strcmp(dest, "42"))
+	{
+		printf("failed: does not return dest");
+		return (1);
+	}
+	else
+		printf("ok\n");
 
 	return (0);
 }
