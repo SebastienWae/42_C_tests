@@ -3,34 +3,65 @@
 
 unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
 
+/*
+ * strlcpy
+ * NUL termination if enough room (must be included in size)
+ * add NUL termination if size is not 0
+ * copies up to `size` - 1 from `src` to `dst`
+ * returns the total length of src
+ */
+
 int	main(void)
 {
-	unsigned int	r1;
-	unsigned int	r1_test;
-	char	dest1[3];
-	char	dest1_test[3];
+	char				dest[255];
+	unsigned int		r;
 
-	unsigned int	r2;
-	unsigned int	r2_test;
-	char	dest2[5];
-	char	dest2_test[5];
+	printf("copy test:\n");
+	ft_strlcpy(dest, "hello", 6);
+	if (strcmp(dest, "hello") != 0)
+	{
+		printf("failed: src was not copied to dest\n");
+	}
+	else
+		printf("ok\n");
 
-	unsigned int	r3;
-	char	dest3[3];
+	printf("truncate test:\n");
+	ft_strlcpy(dest, "hello", 2);
+	if (strcmp(dest, "h") != 0)
+	{
+		printf("failed: src was not properly truncated\n");
+		printf("expected: h");
+		printf("copied: %s", dest);
+	}
+	else
+		printf("ok\n");
 
-	r1 = ft_strlcpy(dest1, "42", 1);
-	r1_test = strlcpy(dest1_test, "42", 1);
-	if (r1 != r1_test || strcmp(dest1, dest1_test) != 0)
-		return (1);
+	printf("size is 0 test:\n");
+	ft_strlcpy(dest, "hello", 0);
+	if (dest[0] == '\0')
+	{
+		printf("failed: NUL char was added\n");
+	}
+	else
+		printf("ok\n");
 
+	printf("size bigger than src test:\n");
+	ft_strlcpy(dest, "hello", 10);
+	if (strcmp(dest, "hello") != 0)
+	{
+		printf("failed: does not stop at the end of str\n");
+	}
+	else
+		printf("ok\n");
 
-	r2 = ft_strlcpy(dest2, "42", 2);
-	r2_test = strlcpy(dest2_test, "42", 2);
-	if (r2 != r2_test || strcmp(dest2, dest2_test) != 0)
-		return (1);
-
-	r3 = ft_strlcpy(dest3, "4234", 5000000);
-	printf("%s\n", dest3);
+	printf("return src lenght test:\n");
+	r = ft_strlcpy(dest, "hello", 3);
+	if (r != 5)
+	{
+		printf("failed: does not return the lenght of str\n");
+	}
+	else
+		printf("ok\n");
 
 	return (0);
 }
