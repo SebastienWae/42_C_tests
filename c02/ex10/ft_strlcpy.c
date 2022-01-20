@@ -21,6 +21,7 @@ int	main(void)
 	if (strcmp(dest, "hello") != 0)
 	{
 		printf("failed: src was not copied to dest\n");
+		return (1);
 	}
 	else
 		printf("ok\n");
@@ -32,6 +33,7 @@ int	main(void)
 		printf("failed: src was not properly truncated\n");
 		printf("expected: h");
 		printf("copied: %s", dest);
+		return (1);
 	}
 	else
 		printf("ok\n");
@@ -41,6 +43,7 @@ int	main(void)
 	if (dest[0] == '\0')
 	{
 		printf("failed: NUL char was added\n");
+		return (1);
 	}
 	else
 		printf("ok\n");
@@ -50,6 +53,7 @@ int	main(void)
 	if (strcmp(dest, "hello") != 0)
 	{
 		printf("failed: does not stop at the end of str\n");
+		return (1);
 	}
 	else
 		printf("ok\n");
@@ -59,6 +63,7 @@ int	main(void)
 	if (r != 5)
 	{
 		printf("failed: does not return the lenght of str\n");
+		return (1);
 	}
 	else
 		printf("ok\n");
