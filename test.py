@@ -80,7 +80,7 @@ def run_test(project_path, project, exercise, watch, force):
         test_exercise(exercise, project_path, test_path, force)
         print("\n")
     else:
-        test_files = [f for f in glob.glob(f"{test_path}/ex*")]
+        test_files = sorted([f for f in glob.glob(f"{test_path}/ex*")])
         for ex in test_files:
             if(not test_exercise(os.path.basename(ex), project_path, test_path, force) and not force):
                 break;
