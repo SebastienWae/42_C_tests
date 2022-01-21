@@ -18,6 +18,4 @@ int	main(void)
 
 	if(ft_recursive_power(10, 0) != 1)
 		return (1);
-
-	printf("%d\n", ft_recursive_power(4, 8));
 }
