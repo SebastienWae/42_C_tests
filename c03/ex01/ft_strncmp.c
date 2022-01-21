@@ -18,6 +18,12 @@ int	main(void)
 		printf("failed: you do not stop at n");
 		return (1);
 	}
+	
+	if(ft_strncmp("aaaaa", "bbbb", 0) != 0)
+	{
+		printf("failed: n is 0 not handled");
+		return (1);
+	}
 
 	return (0);
 }
