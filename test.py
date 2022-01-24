@@ -17,7 +17,7 @@ def norminette(path, force):
 
 def gcc_compile(c_file_path, test_file_path):
     print("[underline]gcc:")
-    output = subprocess.run(["gcc", "-Wall", "-Werror", "-Wextra", c_file_path, test_file_path], capture_output=True)
+    output = subprocess.run(["gcc", "-g", "-Wall", "-Werror", "-Wextra", c_file_path, test_file_path], capture_output=True)
     print(output)
     if(output.returncode == 1):
         console.print(output.stderr.decode('UTF-8'))
