@@ -4,6 +4,12 @@ int ft_is_prime(int nb);
 
 int	main(void)
 {
+	if(ft_is_prime(0) != 0)
+		return (1);
+
+	if(ft_is_prime(1) != 0)
+		return (1);
+
 	if(ft_is_prime(2) != 1)
 		return (1);
 

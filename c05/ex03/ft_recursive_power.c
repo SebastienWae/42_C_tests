@@ -10,6 +10,12 @@ int	main(void)
 	if(ft_recursive_power(3, 4) != 81)
 		return (1);
 
+	if(ft_recursive_power(3, 1) != 3)
+		return (1);
+
+	if(ft_recursive_power(3, 0) != 1)
+		return (1);
+
 	if(ft_recursive_power(12, 8) != 429981696)
 		return (1);
 
