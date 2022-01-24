@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int ft_find_next_prime(int nb);
 
@@ -15,5 +16,4 @@ int	main(void)
 
 	if(ft_find_next_prime(10) != 11)
 		return (1);
-
 }

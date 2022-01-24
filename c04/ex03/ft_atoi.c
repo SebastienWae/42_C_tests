@@ -27,7 +27,11 @@ int	main(void)
 		return (1);
 	
 	r = ft_atoi("12+3");
-	if (r != 123)
+	if (r != 12)
+		return (1);
+
+	r = ft_atoi(" + + 12+3");
+	if (r != 0)
 		return (1);
 
 	r = ft_atoi("      123");
@@ -39,7 +43,11 @@ int	main(void)
 		return (1);
 
 	r = ft_atoi("  12++3 3");
-	if (r != 123)
+	if (r != 12)
+		return (1);
+
+	r = ft_atoi("12---");
+	if (r != 12)
 		return (1);
 
 	r = ft_atoi("---+--+1234ab567");
