@@ -38,7 +38,7 @@ int	main(void)
 	if (r != 123)
 		return (1);
 
-	r = ft_atoi("  12   3");
+	r = ft_atoi("\n\t12   3");
 	if (r != 12)
 		return (1);
 
