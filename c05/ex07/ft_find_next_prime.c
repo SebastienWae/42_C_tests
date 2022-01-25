@@ -16,4 +16,7 @@ int	main(void)
 
 	if(ft_find_next_prime(10) != 11)
 		return (1);
+
+	if(ft_find_next_prime(INT_MIN) != 2)
+		return (1);
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int ft_is_prime(int nb);
 
@@ -29,5 +30,8 @@ int	main(void)
 		return (1);
 
 	if(ft_is_prime(99) != 0)
+		return (1);
+
+	if(ft_is_prime(INT_MAX - 1) != 0)
 		return (1);
 }
