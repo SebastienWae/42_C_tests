@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int ft_sqrt(int nb);
 
@@ -20,5 +21,8 @@ int	main(void)
 		return (1);
 
 	if(ft_sqrt(-10) != 0)
+		return (1);
+
+	if(ft_sqrt(INT_MAX) != 0)
 		return (1);
 }
