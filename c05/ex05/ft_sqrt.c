@@ -26,5 +26,5 @@ int	main(void)
 	if(ft_sqrt(INT_MAX) != 0)
 		return (1);
 
-	ft_sqrt(INT_MAX - 3)
+	ft_sqrt(INT_MAX - 3);
 }
