@@ -9,7 +9,7 @@ int	main(void)
 	int **range;
 
 	range = malloc(sizeof(int*));
-	if(ft_ultimate_range(range, 0, 10) != 10 && (*range)[0] != 0 && (*range)[9] != 9)
+	if(ft_ultimate_range(range, 0, 10) != 10 || (*range)[0] != 0 || (*range)[9] != 9)
 		return (1);
 	free(range);
 

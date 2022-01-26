@@ -42,4 +42,7 @@ int	main(void)
 	
 	if (strcmp(ft_strjoin(3, strs, "%-%"), "hello%-%world%-%hello") != 0)
 		return (1);
+
+	if (strcmp(ft_strjoin(3, strs, ""), "helloworldhello") != 0)
+		return (1);
 }
