@@ -33,7 +33,7 @@ int	main(void)
 
 	if(ft_strcmp("\200", "\1") <= 0)
 	{
-		printf("failed: does not return more han 0 when s1 is greater to s2 (unsigned char)\n");
+		printf("failed: does not return more than 0 when s1 is greater to s2 (unsigned char)\n");
 		return (1);
 	}
 
